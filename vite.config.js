@@ -27,6 +27,7 @@ export default {
         feedback: resolve(__dirname, 'src/feedback.html'),
         fruit: resolve(__dirname, 'src/fruit-ninja.html'),
         interface: resolve(__dirname, 'src/interface-elements.html'),
+        csvtojson: resolve(__dirname, 'src/convertJSON.js'),
 
       },
     },
