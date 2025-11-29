@@ -1,7 +1,13 @@
-Title,URL,Application
-Sample Observation 1,https://imagedelivery.net/VHJK16c5fHmNaL_z0o4Kaw/a32f2dce-2715-49cf-9387-a9c144b3a600/public,Spongebob
-Sample Observation 2,https://imagedelivery.net/VHJK16c5fHmNaL_z0o4Kaw/99bd8849-64b7-4936-5079-433721b32800/public,Spongebob
-Sample 3,https://imagedelivery.net/VHJK16c5fHmNaL_z0o4Kaw/ea4aba6e-6196-4f28-3988-385dc0281500/public,Spongebob
-Sample 4,https://imagedelivery.net/VHJK16c5fHmNaL_z0o4Kaw/c2d79750-2b0f-470a-5518-39a29829b100/public,Spongebob
-Sample 5,https://imagedelivery.net/VHJK16c5fHmNaL_z0o4Kaw/ddb55e57-c232-4179-90a8-2e4d24e5df00/public,Spongebob
-Raytracing Interaction,https://imagedelivery.net/VHJK16c5fHmNaL_z0o4Kaw/25d2ee06-9acd-4d73-7b2b-8d87709a5700/public,Meta Quest 3: Home
+Title (internal),URL,Application,Task,Input,Feedback,Interface_Elements,Interaction_Technique
+Sample Observation 1,https://imagedelivery.net/VHJK16c5fHmNaL_z0o4Kaw/a32f2dce-2715-49cf-9387-a9c144b3a600/public,Spongebob,,,,,
+Sample Observation 2,https://imagedelivery.net/VHJK16c5fHmNaL_z0o4Kaw/99bd8849-64b7-4936-5079-433721b32800/public,Spongebob,,,,,
+Sample 3,https://imagedelivery.net/VHJK16c5fHmNaL_z0o4Kaw/ea4aba6e-6196-4f28-3988-385dc0281500/public,Spongebob,,,,,
+Sample 4,https://imagedelivery.net/VHJK16c5fHmNaL_z0o4Kaw/c2d79750-2b0f-470a-5518-39a29829b100/public,Spongebob,,,,,
+Sample 5,https://imagedelivery.net/VHJK16c5fHmNaL_z0o4Kaw/ddb55e57-c232-4179-90a8-2e4d24e5df00/public,Spongebob,,,,,
+Raycast Selection on Meta Quest Home,https://imagedelivery.net/VHJK16c5fHmNaL_z0o4Kaw/25d2ee06-9acd-4d73-7b2b-8d87709a5700/public,Meta Quest 3: Home,Selection,"Controller Pose, Trigger","Haptic Bump, Button Hover Effect","Button, Raycast Pointer",Raycast Selection
+Beat Saber Menu Selection,,,,,,,
+Beat Sabe Song Selection,,,,,,,
+Beat Saber Option Selection,,,,,,,
+Beat Saber Striking Block,,,,,,,
+Beat Saber Ducking,,,,,,,
+Beat Saber Dodging,,,,,,,
