@@ -31,12 +31,11 @@
     <main class="main-content">
         <!-- Back Button -->
         <div class="back-button">
-            <a href="../explore/explore.html" class="back-link">
+            <a href="./explore.html" class="back-link">
                 ←
             </a>
         </div>
 
-        <!-- Page Header -->
         <div class="page-header">
             <h2 class="page-title">Feedback</h2>
             <p class="page-description">
@@ -47,44 +46,37 @@
             </p>
         </div>
 
-        <!-- Feedback List -->
-        <div class="feedback-list">
-            <div class="feedback-item">
-                <div class="feedback-icon">🌍</div>
-                <div class="feedback-content">
-                    <h3 class="feedback-title">Environmental Change</h3>
-                    <p class="feedback-description">Lorem ipsum dolor sit amet, consectetur</p>
-                </div>
-                <a href="environmental-change/environmental-change.html" class="btn-more">More</a>
-            </div>
+        <!-- Page Header -->
+        <section class="section">
 
-            <div class="feedback-item">
-                <div class="feedback-icon">🌍</div>
-                <div class="feedback-content">
-                    <h3 class="feedback-title">Haptic Bump</h3>
-                    <p class="feedback-description">Lorem ipsum dolor sit amet, consectetur</p>
-                </div>
-                <button class="btn-more">More</button>
+            <div class="tag-list">
+                <ul id="csv-list"></ul>
             </div>
+        </section>
+        <script type="module">
+            import { loadObsAsJson } from "./convertJSON.js";
+            document.addEventListener("DOMContentLoaded", async () => {
+                const submissions = await loadObsAsJson();
 
-            <div class="feedback-item">
-                <div class="feedback-icon">🌍</div>
-                <div class="feedback-content">
-                    <h3 class="feedback-title">Hover Effect</h3>
-                    <p class="feedback-description">Lorem ipsum dolor sit amet, consectetur</p>
-                </div>
-                <button class="btn-more">More</button>
-            </div>
+                const list = document.getElementById("csv-list");
+                const set = new Set(); // ensures unique values
 
-            <div class="feedback-item">
-                <div class="feedback-icon">🌍</div>
-                <div class="feedback-content">
-                    <h3 class="feedback-title">New UI Page</h3>
-                    <p class="feedback-description">Lorem ipsum dolor sit amet, consectetur</p>
-                </div>
-                <button class="btn-more">More</button>
-            </div>
-        </div>
+                // CHANGE "Tags" to your actual column name
+                submissions.forEach(row => {
+
+                    const values = row.Feedback.split(",").map(v => v.trim());
+                    values.forEach(v => set.add(v));
+                });
+
+
+                // Add each unique value to the list
+                set.forEach(value => {
+                    const li = document.createElement("li");
+                    li.textContent = value;
+                    list.appendChild(li);
+                });
+            });
+        </script>
     </main>
 </body>
 

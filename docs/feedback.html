@@ -10,7 +10,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&family=Archivo+Black&display=swap"
         rel="stylesheet">
-  <link rel="stylesheet" crossorigin href="./assets/feedback-DrSE-kT4.css">
+  <script type="module" crossorigin src="./assets/feedback-CcGqVGX6.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/modulepreload-polyfill-DaKOjhqt.js">
+  <link rel="modulepreload" crossorigin href="./assets/csvtojson-DRLF1_1V.js">
+  <link rel="stylesheet" crossorigin href="./assets/feedback-CAQDjIcM.css">
   <link rel="stylesheet" crossorigin href="./assets/styles-DcWEBwgG.css">
 </head>
 
@@ -31,12 +34,11 @@
     <main class="main-content">
         <!-- Back Button -->
         <div class="back-button">
-            <a href="../explore/explore.html" class="back-link">
+            <a href="./explore.html" class="back-link">
                 ←
             </a>
         </div>
 
-        <!-- Page Header -->
         <div class="page-header">
             <h2 class="page-title">Feedback</h2>
             <p class="page-description">
@@ -47,44 +49,13 @@
             </p>
         </div>
 
-        <!-- Feedback List -->
-        <div class="feedback-list">
-            <div class="feedback-item">
-                <div class="feedback-icon">🌍</div>
-                <div class="feedback-content">
-                    <h3 class="feedback-title">Environmental Change</h3>
-                    <p class="feedback-description">Lorem ipsum dolor sit amet, consectetur</p>
-                </div>
-                <a href="environmental-change/environmental-change.html" class="btn-more">More</a>
-            </div>
+        <!-- Page Header -->
+        <section class="section">
 
-            <div class="feedback-item">
-                <div class="feedback-icon">🌍</div>
-                <div class="feedback-content">
-                    <h3 class="feedback-title">Haptic Bump</h3>
-                    <p class="feedback-description">Lorem ipsum dolor sit amet, consectetur</p>
-                </div>
-                <button class="btn-more">More</button>
+            <div class="tag-list">
+                <ul id="csv-list"></ul>
             </div>
-
-            <div class="feedback-item">
-                <div class="feedback-icon">🌍</div>
-                <div class="feedback-content">
-                    <h3 class="feedback-title">Hover Effect</h3>
-                    <p class="feedback-description">Lorem ipsum dolor sit amet, consectetur</p>
-                </div>
-                <button class="btn-more">More</button>
-            </div>
-
-            <div class="feedback-item">
-                <div class="feedback-icon">🌍</div>
-                <div class="feedback-content">
-                    <h3 class="feedback-title">New UI Page</h3>
-                    <p class="feedback-description">Lorem ipsum dolor sit amet, consectetur</p>
-                </div>
-                <button class="btn-more">More</button>
-            </div>
-        </div>
+        </section>
     </main>
 </body>
 

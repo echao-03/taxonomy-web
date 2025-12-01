@@ -110,19 +110,39 @@
     .main-content {
         padding: 1rem;
     }
-    
+
     .feedback-item {
         padding: 1rem;
         flex-direction: column;
         align-items: flex-start;
         gap: 1rem;
     }
-    
+
     .btn-more {
         align-self: flex-end;
     }
-    
+
     .page-title {
         font-size: 2rem;
     }
+}
+
+.tag-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tag-list ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag-list li {
+    background: #f0f0f0;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
 }

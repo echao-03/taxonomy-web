@@ -10,11 +10,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&family=Archivo+Black&display=swap"
         rel="stylesheet">
-  <script type="module" crossorigin src="./assets/interface-xPT6pKph.js"></script>
-  <link rel="modulepreload" crossorigin href="./assets/modulepreload-polyfill-DaKOjhqt.js">
-  <link rel="modulepreload" crossorigin href="./assets/csvtojson-DRLF1_1V.js">
-  <link rel="stylesheet" crossorigin href="./assets/interface-ZJ0RQ0Kt.css">
-  <link rel="stylesheet" crossorigin href="./assets/styles-DcWEBwgG.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/inputs.css">
 </head>
 
 <body>
@@ -41,7 +38,7 @@
 
         <!-- Page Header -->
         <div class="page-header">
-            <h2 class="page-title">Interface Elements</h2>
+            <h2 class="page-title">Inputs</h2>
             <p class="page-description">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et maximus ante, a dapibus lacus.
                 Praesent accumsan malesuada odio sit amet blandit. Sed blandit justo et dui tincidunt, vitae ultrices
@@ -50,12 +47,37 @@
             </p>
         </div>
 
+        <!-- Interface Elements List -->
         <section class="section">
 
             <div class="tag-list">
                 <ul id="csv-list"></ul>
             </div>
         </section>
+        <script type="module">
+            import { loadObsAsJson } from "./convertJSON.js";
+            document.addEventListener("DOMContentLoaded", async () => {
+                const submissions = await loadObsAsJson();
+
+                const list = document.getElementById("csv-list");
+                const set = new Set(); // ensures unique values
+
+                // CHANGE "Tags" to your actual column name
+                submissions.forEach(row => {
+
+                    const values = row.Input.split(",").map(v => v.trim());
+                    values.forEach(v => set.add(v));
+                });
+
+
+                // Add each unique value to the list
+                set.forEach(value => {
+                    const li = document.createElement("li");
+                    li.textContent = value;
+                    list.appendChild(li);
+                });
+            });
+        </script>
     </main>
 </body>
 

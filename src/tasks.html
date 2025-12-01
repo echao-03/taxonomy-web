@@ -48,70 +48,38 @@
         </div>
 
         <!-- Tasks Grid -->
-        <div class="tasks-grid">
-            <div class="task-card">
-                <div class="task-icon">✏️</div>
-                <h3 class="task-title">Create</h3>
-                <p class="task-description">Lorem ipsum dolor sit amet, consectetur</p>
-                <a href="create/create.html" class="btn-more">More</a>
-            </div>
+        <section class="section">
 
-            <div class="task-card">
-                <div class="task-icon">🗑️</div>
-                <h3 class="task-title">Delete</h3>
-                <p class="task-description">Lorem ipsum dolor sit amet, consectetur</p>
-                <button class="btn-more">More</button>
+            <div class="tag-list">
+                <ul id="csv-list"></ul>
             </div>
+        </section>
+        <script type="module">
+            import { loadObsAsJson } from "./convertJSON.js";
+            document.addEventListener("DOMContentLoaded", async () => {
+                const submissions = await loadObsAsJson();
 
-            <div class="task-card">
-                <div class="task-icon">✏️</div>
-                <h3 class="task-title">Drawing</h3>
-                <p class="task-description">Lorem ipsum dolor sit amet, consectetur</p>
-                <button class="btn-more">More</button>
-            </div>
+                const list = document.getElementById("csv-list");
+                const set = new Set(); // ensures unique values
 
-            <div class="task-card">
-                <div class="task-icon">✏️</div>
-                <h3 class="task-title">Edit</h3>
-                <p class="task-description">Lorem ipsum dolor sit amet, consectetur</p>
-                <button class="btn-more">More</button>
-            </div>
+                // CHANGE "Tags" to your actual column name
+                submissions.forEach(row => {
 
-            <div class="task-card">
-                <div class="task-icon">👆</div>
-                <h3 class="task-title">Indication</h3>
-                <p class="task-description">Lorem ipsum dolor sit amet, consectetur</p>
-                <button class="btn-more">More</button>
-            </div>
+                    console.log(row.Task);
 
-            <div class="task-card">
-                <div class="task-icon">📍</div>
-                <h3 class="task-title">Object Placement</h3>
-                <p class="task-description">Lorem ipsum dolor sit amet, consectetur</p>
-                <button class="btn-more">More</button>
-            </div>
+                    const values = row.Task.split(",").map(v => v.trim());
+                    values.forEach(v => set.add(v));
+                });
 
-            <div class="task-card">
-                <div class="task-icon">👆</div>
-                <h3 class="task-title">Selection</h3>
-                <p class="task-description">Lorem ipsum dolor sit amet, consectetur</p>
-                <button class="btn-more">More</button>
-            </div>
 
-            <div class="task-card">
-                <div class="task-icon">📍</div>
-                <h3 class="task-title">Object Placement</h3>
-                <p class="task-description">Lorem ipsum dolor sit amet, consectetur</p>
-                <button class="btn-more">More</button>
-            </div>
-
-            <div class="task-card">
-                <div class="task-icon">📜</div>
-                <h3 class="task-title">Scroll</h3>
-                <p class="task-description">Lorem ipsum dolor sit amet, consectetur</p>
-                <button class="btn-more">More</button>
-            </div>
-        </div>
+                // Add each unique value to the list
+                set.forEach(value => {
+                    const li = document.createElement("li");
+                    li.textContent = value;
+                    list.appendChild(li);
+                });
+            });
+        </script>
     </main>
 </body>
 

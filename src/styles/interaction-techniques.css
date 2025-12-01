@@ -1,8 +1,8 @@
-/* Feedback page specific styles */
+/* Tasks page specific styles */
 .main-content {
     padding: 1rem 2rem;
-    max-width: none;
-    margin: 0;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Back button */
@@ -41,50 +41,48 @@
     font-size: 1rem;
 }
 
-/* Feedback list */
-.feedback-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+/* Tasks grid */
+.tasks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
 }
 
-.feedback-item {
+.task-card {
     background: white;
     border: 1px solid #e5e7eb;
     border-radius: 0.75rem;
-    padding: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+    padding: 2rem;
     transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.feedback-item:hover {
+.task-card:hover {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
 }
 
-.feedback-icon {
+.task-icon {
     font-size: 1.5rem;
-    flex-shrink: 0;
+    margin-bottom: 1rem;
 }
 
-.feedback-content {
-    flex-grow: 1;
-}
-
-.feedback-title {
-    font-size: 1.125rem;
+.task-title {
+    font-size: 1.25rem;
     font-weight: 600;
     color: #1f2937;
-    margin: 0 0 0.25rem 0;
+    margin: 0 0 0.5rem 0;
 }
 
-.feedback-description {
+.task-description {
     color: #6b7280;
     font-size: 0.875rem;
     line-height: 1.5;
-    margin: 0;
+    margin: 0 0 1.5rem 0;
+    flex-grow: 1;
 }
 
 .btn-more {
@@ -97,7 +95,7 @@
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
-    flex-shrink: 0;
+    align-self: flex-end;
 }
 
 .btn-more:hover {
@@ -106,23 +104,52 @@
 }
 
 /* Responsive design */
+@media (max-width: 1024px) {
+    .main-content {
+        padding: 1rem 1.5rem;
+    }
+
+    .tasks-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
 @media (max-width: 768px) {
     .main-content {
         padding: 1rem;
     }
-    
-    .feedback-item {
-        padding: 1rem;
-        flex-direction: column;
-        align-items: flex-start;
+
+    .tasks-grid {
+        grid-template-columns: 1fr;
         gap: 1rem;
     }
-    
-    .btn-more {
-        align-self: flex-end;
+
+    .task-card {
+        padding: 1.5rem;
     }
-    
+
     .page-title {
         font-size: 2rem;
     }
+}
+
+.tag-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tag-list ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag-list li {
+    background: #f0f0f0;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
 }

@@ -31,7 +31,7 @@
     <main class="main-content">
         <!-- Back Button -->
         <div class="back-button">
-            <a href="../explore/explore.html" class="back-link">
+            <a href="./explore.html" class="back-link">
                 ←
             </a>
         </div>
@@ -47,35 +47,38 @@
             </p>
         </div>
 
-        <!-- Interface Elements List -->
-        <div class="elements-list">
-            <div class="element-item">
-                <div class="element-icon">↔️</div>
-                <div class="element-content">
-                    <h3 class="element-title">Map</h3>
-                    <p class="element-description">Lorem ipsum dolor sit amet, consectetur</p>
-                </div>
-                <a href="map/map.html" class="btn-more">More</a>
-            </div>
+        <section class="section">
 
-            <div class="element-item">
-                <div class="element-icon">↔️</div>
-                <div class="element-content">
-                    <h3 class="element-title">Slider</h3>
-                    <p class="element-description">Lorem ipsum dolor sit amet, consectetur</p>
-                </div>
-                <button class="btn-more">More</button>
+            <div class="tag-list">
+                <ul id="csv-list"></ul>
             </div>
+        </section>
+        <script type="module">
+            import { loadObsAsJson } from "./convertJSON.js";
+            document.addEventListener("DOMContentLoaded", async () => {
+                const submissions = await loadObsAsJson();
 
-            <div class="element-item">
-                <div class="element-icon">↔️</div>
-                <div class="element-content">
-                    <h3 class="element-title">Toggle</h3>
-                    <p class="element-description">Lorem ipsum dolor sit amet, consectetur</p>
-                </div>
-                <button class="btn-more">More</button>
-            </div>
-        </div>
+                const list = document.getElementById("csv-list");
+                const set = new Set(); // ensures unique values
+
+                // CHANGE "Tags" to your actual column name
+                submissions.forEach(row => {
+
+                    console.log(row.Interface_Elements);
+
+                    const values = row.Interface_Elements.split(",").map(v => v.trim());
+                    values.forEach(v => set.add(v));
+                });
+
+
+                // Add each unique value to the list
+                set.forEach(value => {
+                    const li = document.createElement("li");
+                    li.textContent = value;
+                    list.appendChild(li);
+                });
+            });
+        </script>
     </main>
 </body>
 
