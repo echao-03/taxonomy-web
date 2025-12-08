@@ -25,4 +25,4 @@ document.addEventListener("DOMContentLoaded", async () => {
     list.appendChild(li);
   });
 });
-//# sourceMappingURL=tasks-DAWZmW7m.js.map
+//# sourceMappingURL=tasks-BEq7NMa7.js.map
