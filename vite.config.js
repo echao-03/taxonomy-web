@@ -10,7 +10,7 @@ const isCodeSandbox =
 export default {
   root: resolve(__dirname, 'src'),
   publicDir: "../static/",
-  base: "./",
+  base: "https://set-lab-ucsc.github.io/taxonomy-web/",
   build: {
     outDir: "../docs",
     emptyOutDir: true,
